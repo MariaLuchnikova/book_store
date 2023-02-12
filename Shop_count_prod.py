@@ -1,0 +1,15 @@
+from selenium import webdriver
+driver = webdriver.Chrome()
+driver.implicitly_wait(5)
+driver.maximize_window()
+driver.get("https://practice.automationtesting.in/")
+driver.find_element_by_link_text("My Account").click()
+driver.find_element_by_id("username").send_keys("tiledi5421@ezgiant.com")
+driver.find_element_by_id("password").send_keys("GalaktikaG2023+")
+driver.find_element_by_name("login").click()
+driver.find_element_by_link_text("Shop").click()
+driver.find_element_by_link_text("HTML").click()
+items_count = len(driver.find_elements_by_class_name("attachment-shop_catalog"))
+if items_count != 3:
+    print(f'Ошибка: количество товаров на странице {items_count}. Ожидается 3')
+driver.quit()
