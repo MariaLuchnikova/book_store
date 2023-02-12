@@ -20,6 +20,5 @@ wait = WebDriverWait(driver, 10)
 wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "wp-post-image")))
 driver.find_element_by_class_name("wp-post-image").click()
 wait.until(EC.visibility_of_element_located((By.ID, "fullResImage")))
-driver.find_element_by_class_name("pp_close")
+driver.find_element_by_class_name("pp_close").click()
 driver.quit()
-
